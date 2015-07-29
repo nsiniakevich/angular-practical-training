@@ -1,17 +1,17 @@
 <p>Task 1</p>
 
-<div ng-init="shared = 'shared value'"></div>
+<div ng-init="sharedObject.sharedProperty = 'Shared value'"></div>
 
 <div ng-controller="ParentCtrl1">
-    ParentCtrl1: <input type="text" ng-model="shared"/> {{shared}}
+    ParentCtrl1: <input type="text" ng-model="sharedObject.sharedProperty"/> {{sharedObject.sharedProperty}}
     <div ng-controller="ChildCtrl1">
-        ChildCtrl1: <input type="text" ng-model="shared"/> {{shared}}
+        ChildCtrl1: <input type="text" ng-model="sharedObject.sharedProperty"/> {{sharedObject.sharedProperty}}
     </div>
 </div>
 
 <div ng-controller="ParentCtrl2">
-    ParentCtrl2: <input type="text" ng-model="shared"/> {{shared}}
+    ParentCtrl2: <input type="text" ng-model="sharedObject.sharedProperty"/> {{sharedObject.sharedProperty}}
     <div ng-controller="ChildCtrl2">
-        ChildCtrl2: <input type="text" ng-model="shared"/> {{shared}}
+        ChildCtrl2: <input type="text" ng-model="sharedObject.sharedProperty"/> {{sharedObject.sharedProperty}}
     </div>
 </div>
