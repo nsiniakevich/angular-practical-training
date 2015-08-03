@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('trainingApp.task2')
+angular.module('trainingApp.spoiler', [])
         .directive('spoiler', function() {
             return {
                 restrict: 'E',

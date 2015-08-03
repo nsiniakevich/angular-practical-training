@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('trainingApp.task2', ['ngRoute'])
+angular.module('trainingApp.task2', ['ngRoute', 'trainingApp.spoiler'])
 
         .config(function ($routeProvider) {
             $routeProvider.when('/task2', {
