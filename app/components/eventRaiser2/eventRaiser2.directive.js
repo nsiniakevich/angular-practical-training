@@ -10,11 +10,11 @@ angular.module('trainingApp.eventRaiser2', [])
                     $scope.counter = 1;
 
                     $scope.fireEvent = function() {
-                        $rootScope.$emit('event2', $scope.counter + ' event(s) fired');
+                        $rootScope.$broadcast('event2', $scope.counter + ' event(s) fired');
                         $scope.counter++;
                     };
 
-                    $rootScope.$on('event1', function(event, data) {
+                    $scope.$on('event1', function(event, data) {
                         console.log('Caught event1: ' + data);
                     });
                 }
