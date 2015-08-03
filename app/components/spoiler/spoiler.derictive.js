@@ -5,7 +5,7 @@ angular.module('trainingApp.spoiler', [])
             return {
                 restrict: 'E',
                 scope: {
-                    name: '@',
+                    name: '=?',
                     onSpoilerActivated: '&'
                 },
                 transclude: true,
@@ -14,7 +14,7 @@ angular.module('trainingApp.spoiler', [])
                     $scope.isShowing = false;
                     $scope.isActivated = false;
 
-                    $scope.spoilerName = $scope.name || 'Spoiler';
+                    $scope.name = $scope.name || 'Spoiler';
 
                     $scope.toggle = function() {
                         $scope.isShowing = !$scope.isShowing;
