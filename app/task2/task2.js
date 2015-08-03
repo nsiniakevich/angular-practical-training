@@ -8,8 +8,22 @@ angular.module('trainingApp.task2', ['ngRoute'])
                 controller: 'Task2Controller'
             });
         })
-        .controller("Task2Controller", function($scope) {
-            $scope.onSpoilerOpen = function() {
-                console.log('Spoiler is opened');
+        .controller("Task2Controller", function($scope, $timeout) {
+            $scope.loadDataForSpoiler1 = function() {
+                $timeout(function() {
+                    $scope.spoiler1 = 'Spoiler 1 data';
+                }, 500);
+            };
+
+            $scope.loadDataForSpoiler2 = function() {
+                $timeout(function() {
+                    $scope.spoiler2 = 'Spoiler 2 data';
+                }, 500);
+            };
+
+            $scope.loadDataForSpoiler3 = function() {
+                $timeout(function() {
+                    $scope.spoiler3 = 'Spoiler 3 data';
+                }, 500);
             };
         });

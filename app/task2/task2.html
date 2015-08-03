@@ -1,9 +1,13 @@
 <h2>Task 2</h2>
 
-<spoiler on-spoiler-activated="onSpoilerOpen()">
-    bla bla
+<spoiler on-spoiler-activated="loadDataForSpoiler1()">
+    {{spoiler1}}
 
-    <spoiler name="Named spoiler">
-        bla bla again
+    <spoiler name="Named spoiler" on-spoiler-activated="loadDataForSpoiler2()">
+        {{spoiler2}}
     </spoiler>
+</spoiler>
+
+<spoiler on-spoiler-activated="loadDataForSpoiler3()">
+    {{spoiler3}}
 </spoiler>
