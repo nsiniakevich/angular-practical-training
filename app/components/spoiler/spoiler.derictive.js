@@ -9,7 +9,7 @@ angular.module('trainingApp.task2')
                     onSpoilerActivated: '&'
                 },
                 transclude: true,
-                templateUrl: 'task2/spoiler.html',
+                templateUrl: 'components/spoiler/spoiler.html',
                 link: function($scope, element, attrs) {
                     $scope.isShowing = false;
                     $scope.isActivated = false;
