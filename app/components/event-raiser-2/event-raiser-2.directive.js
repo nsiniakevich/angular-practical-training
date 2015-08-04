@@ -5,7 +5,7 @@ angular.module('trainingApp.eventRaiser2', [])
             return {
                 restrict: 'E',
                 scope: {},
-                templateUrl: 'components/eventRaiser2/eventRaiser2.html',
+                templateUrl: 'components/event-raiser-2/event-raiser-2.html',
                 link: function($scope, element, attrs) {
                     $scope.counter = 1;
 
