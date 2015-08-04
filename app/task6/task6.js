@@ -8,7 +8,7 @@ angular.module('trainingApp.task6', ['ngRoute'])
                 controller: 'Task6Controller'
             });
         })
-        .controller("Task6Controller", function($scope, $timeout, $http) {
+        .controller("Task6Controller", function($scope, $timeout, $http, $q) {
             $scope.timeoutServiceValue = 'This message will be changed by $timeout service';
             $scope.setTimeoutValue = 'This message will be changed by setTimeout()';
 
@@ -23,7 +23,6 @@ angular.module('trainingApp.task6', ['ngRoute'])
 
             $scope.httpServiceCall = function() {
                 $http.get('/data/ajaxResponse.json').success(function(data) {
-                    console.log('Got data: ' + data);
                     $scope.ajaxResponse = data[0];
                 });
             };
@@ -32,12 +31,57 @@ angular.module('trainingApp.task6', ['ngRoute'])
                 var xhr = new XMLHttpRequest();
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState == 4) {
-                        console.log('Got data: ' + xhr.responseText);
                         $scope.ajaxResponse = JSON.parse(xhr.responseText)[1];
                     }
                 };
                 xhr.open('GET', '/data/ajaxResponse.json', true);
                 xhr.send(null);
+            };
+
+            $scope.xmlHttpRequestWithApply = function() {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        $scope.$apply(function() {
+                            $scope.ajaxResponse = JSON.parse(xhr.responseText)[2];
+                        });
+                    }
+                };
+                xhr.open('GET', '/data/ajaxResponse.json', true);
+                xhr.send(null);
+            };
+
+            $scope.xmlHttpRequestWithDigest = function() {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        $scope.ajaxResponse = JSON.parse(xhr.responseText)[1];
+                        $scope.$digest();
+                    }
+                };
+                xhr.open('GET', '/data/ajaxResponse.json', true);
+                xhr.send(null);
+            };
+
+            var callXHR = function() {
+                var deferred = $q.defer();
+
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4) {
+                        deferred.resolve(JSON.parse(xhr.responseText));
+                    }
+                };
+                xhr.open('GET', '/data/ajaxResponse.json', true);
+                xhr.send(null);
+
+                return deferred.promise;
+            };
+
+            $scope.xmlHttpRequestWithPromise = function() {
+                callXHR().then(function(data) {
+                    $scope.ajaxResponse = data[4];
+                });
             };
 
             $scope.$watch('ajaxResponse', function(newValue) {

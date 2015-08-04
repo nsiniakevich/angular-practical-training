@@ -1,3 +1,7 @@
 [
-  "$http response", "XMLHttpRequest response"
+  "$http response",
+  "XMLHttpRequest response",
+  "XMLHttpRequest with $apply() response",
+  "XMLHttpRequest with $digest()",
+  "XMLHttpRequest with angular $q promise"
 ]
