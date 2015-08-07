@@ -11,6 +11,8 @@ angular.module('trainingApp.task3', ['ngRoute', 'trainingApp.spoiler'])
         .controller("Task3Controller", function($scope) {
             $scope.spoilerName = 'Name from taskCtrl';
 
+            $scope.name = 'This name will not be set as the spoiler name';
+
             $scope.loadData = function() {
                 $scope.data = 'The data';
             };

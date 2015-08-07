@@ -16,6 +16,8 @@ angular.module('trainingApp.spoiler', [])
 
                     $scope.name = $scope.name || 'Spoiler';
 
+                    $scope.data = 'This data will not appear in the directive body';
+
                     $scope.toggle = function() {
                         $scope.isShowing = !$scope.isShowing;
 
