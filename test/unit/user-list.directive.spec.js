@@ -2,8 +2,8 @@ describe('user-list directive', function() {
     var $compile, $rootScope;
 
     var compileUserList = function(scope) {
-        var element = $compile('<user-list selected-users="selectedUsers"></user-list>')($rootScope);
-        $rootScope.$digest();
+        var element = $compile('<user-list selected-users="selectedUsers"></user-list>')(scope);
+        scope.$digest();
         return element;
     };
 
