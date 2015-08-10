@@ -1,0 +1,19 @@
+<div id="users"></div>
+
+<script>
+    var bar = $('#users').userList({
+        onSelectedUsersChange: function(event, data) {
+            console.log(data);
+        },
+        selectedUsers: [
+            {
+                "id": 2,
+                "name": "Paul McCartney"
+            },
+            {
+                "id": 3,
+                "name": "George Harrison"
+            }
+        ]
+    });
+</script>
