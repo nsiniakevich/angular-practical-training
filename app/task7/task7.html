@@ -1,19 +1,7 @@
-<div id="users"></div>
+<user-list selected-users="selectedUsers"></user-list>
 
-<script>
-    var bar = $('#users').userList({
-        onSelectedUsersChange: function(event, data) {
-            console.log(data);
-        },
-        selectedUsers: [
-            {
-                "id": 2,
-                "name": "Paul McCartney"
-            },
-            {
-                "id": 3,
-                "name": "George Harrison"
-            }
-        ]
-    });
-</script>
+<ul>
+    <li ng-repeat="user in selectedUsers">
+        {{user.name}}
+    </li>
+</ul>
